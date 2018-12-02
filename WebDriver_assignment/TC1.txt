@@ -1,0 +1,20 @@
+*** Settings ***
+Documentation                                      This is a basic test
+Library                                            Selenium2Library
+
+*** Variables ***
+${url}                                              http://www.amazon.com
+${browser}                                          firefox
+${text}                                             xpath=//*[@id="lst-ib"]
+${search_button}                                    css=input.lsb
+
+*** Test Cases ***
+User fill in the Search text box
+    [Documentation]                                 The user search 'Test Definition'
+    open browser                                    ${URL}    ${browser}
+    wait until page contains                        ${URL}
+    input text                                      ${text}  Test Definition
+    click element                                    ${search_button} 
+    wait until page contains                        Test
+    sleep     5s
+    Close Browser

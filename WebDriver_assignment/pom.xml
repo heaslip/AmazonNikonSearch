@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>MySel20Proj</groupId>
+        <artifactId>MySel20Proj</artifactId>
+        <version>1.0</version>
+        <dependencies>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-server</artifactId>
+                <version>3.141.59</version>
+            </dependency>
+    		<dependency>
+			  <groupId>org.robotframework</groupId>
+			  <artifactId>robotframework-maven-plugin</artifactId>
+			  <version>1.4.7</version>
+			  <type>maven-plugin</type>
+			</dependency>
+        </dependencies>
+        <properties>
+    		<robot-tag>debug</robot-tag>
+  		</properties>
+        <build>
+		    <plugins>
+		      <plugin>
+		        <groupId>org.robotframework</groupId>
+		        <artifactId>robotframework-maven-plugin</artifactId>
+		        <version>1.4.7</version>
+		        <executions>
+		          <execution>
+		            <goals>
+		              <goal>run</goal>
+		            </goals>
+		          </execution>
+		        </executions>
+		        <configuration>
+		          <includes>
+		            <include>${robot-tag}</include>
+		          </includes>
+		        </configuration>
+		      </plugin>
+		    </plugins>
+	  	</build>
+</project>
+  
+   
